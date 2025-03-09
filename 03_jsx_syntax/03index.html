@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .upper {
+        background-color: aqua;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="test"></div>
+
+    <script type="text/babel">
+      const MYID = "atGuigu";
+      const MYH = "hello React!";
+
+      const container = document.getElementById("test");
+      //   const VDOM = (
+      //     <div>
+      //       <h2 id={MYID.toUpperCase()} className="upper">
+      //         <span>{MYH.toLocaleUpperCase()}</span>
+      //       </h2>
+      //       <h2
+      //         id={MYID.toLowerCase()}
+      //         style={{ backgroundColor: "red", fontSize: "20px" }}
+      //       >
+      //         <span>{MYH.toLocaleLowerCase()}</span>
+      //       </h2>
+      //     </div>
+      //   );
+
+      //   const inner2 = { MYH };
+
+      const inner = React.createElement(
+        "h2",
+        { id: MYID.toUpperCase(), className: "upper" },
+        <span>{MYH.toUpperCase()}</span>
+      );
+      //   const VDOM = React.createElement("div", {}, inner);
+      const VDOM = (
+        <div>
+          {inner}
+          <h2
+            id={MYID.toLocaleLowerCase()}
+            style={{ backgroundColor: "red", fontSize: "20px" }}
+          >
+            {MYH.toLocaleLowerCase()}
+          </h2>
+        </div>
+      );
+      ReactDOM.render(VDOM, container);
+    </script>
+  </body>
+</html>
