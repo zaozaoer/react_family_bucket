@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/react@16.8.4/umd/react.development.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.development.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+    ></script>
+    <title>5</title>
+  </head>
+  <body>
+    <div id="test"></div>
+
+    <script type="text/javascript">
+      console.log(this);
+      console.log("javasciprt");
+    </script>
+
+    <script type="text/babel">
+      const container = document.getElementById("test");
+
+      const VDOM = <h1>dfad</h1>;
+
+      function MyComp() {
+        console.log(this);
+        return (
+          <h1>Function component, good for define light weighted components</h1>
+        );
+      }
+      // const MyComp = myComp();
+
+      ReactDOM.render(<MyComp />, container);
+      // ReactDOM.render(MyComp, container);
+
+      // const root = ReactDOM.createRoot(container);
+      // root.render(MyComp);
+    </script>
+  </body>
+</html>

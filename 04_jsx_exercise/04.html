@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+    ></script>
+
+    <title>04</title>
+  </head>
+  <body>
+    <div id="test"></div>
+
+    <!-- <script type="text/javascript">
+      const abc = ["Angular", "React", "Vue"];
+      for (f of abc) {
+        console.log(f);
+        // fwsHtml.push("<li>" + f + "</li>");
+      }
+    </script> -->
+
+    <script type="text/babel">
+      const TITLE = "Frontend js Framework list";
+      const FRAMEWORKS = ["Angular", "React", "Vue"];
+      //   const fwsHtml = [<li>Angular</li>, <li>React</li>, <li>Vue</li>];
+      const fwsHtml = [];
+
+      {
+        // console.log(FRAMEWORKS);
+        let f = "";
+        //   for (f in [1, 2, 3]) console.log(f);
+        for (f of FRAMEWORKS) {
+          console.log(f);
+          fwsHtml.push(<li>{f}</li>);
+        }
+        //   console.log(fwsHtml);
+        if (1 === 1) console.log(999);
+      }
+
+      const container = document.getElementById("test");
+
+      const VDOM = (
+        <div>
+          <h1>{TITLE}</h1>
+
+          <ul>{fwsHtml}</ul>
+        </div>
+      );
+
+      ReactDOM.render(VDOM, container);
+    </script>
+  </body>
+</html>
